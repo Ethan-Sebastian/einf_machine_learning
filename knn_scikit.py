@@ -1,6 +1,5 @@
 import pandas as pd
 import sklearn.neighbors as neigh
-import numpy as np
 
 column_names = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
 iris_data_set = pd.read_csv("iris.csv", names= column_names, header= None)
