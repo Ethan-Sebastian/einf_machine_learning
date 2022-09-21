@@ -4,10 +4,11 @@ import sklearn.model_selection as modsel
 # install Pillow
 import PIL.Image as im
 
+
 # install opencv-python
 import cv2
 
-mnist_training_set = pd.read_csv("mnist_train_100.csv", header=None)
+mnist_training_set = pd.read_csv("/Users/ethansebastian/PyCharmProjects/einf_machine_learning/musterloesungen/klassifikation/mnist_train_100.csv", header=None)
 
 X_train = mnist_training_set.iloc[:, 1:785].values
 y_train = mnist_training_set.iloc[:, 0].values
@@ -18,7 +19,7 @@ multilayer_perceptron.fit(X_train, y_train)
 scores = modsel.cross_val_score(multilayer_perceptron, X_train, y_train, cv=5)
 print(scores)
 
-mnist_test_set = pd.read_csv("mnist_test_100.csv", header=None)
+mnist_test_set = pd.read_csv("/Users/ethansebastian/PyCharmProjects/einf_machine_learning/musterloesungen/klassifikation/mnist_train_100.csv", header=None)
 X_test = mnist_training_set.iloc[:, 1:785].values
 y_test = mnist_training_set.iloc[:, 0].values
 score = multilayer_perceptron.score(X_test, y_test)
